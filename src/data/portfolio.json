@@ -1,0 +1,131 @@
+[
+  {
+    "id": 1,
+    "title": "Gaming Channel Logo",
+    "slug": "gaming-channel-logo",
+    "category": "Logo Design",
+    "description": "Bold gaming logo that increased brand recognition by 300%",
+    "longDescription": "Created a dynamic, bold logo for a rapidly growing gaming channel. The design incorporates modern gaming aesthetics while maintaining versatility across all platforms.",
+    "client": "GameForce Pro",
+    "completionDate": "2024-01-10",
+    "featuredImage": "/api/placeholder/800/600",
+    "images": [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600"
+    ],
+    "beforeImage": "/api/placeholder/400/300",
+    "afterImage": "/api/placeholder/400/300",
+    "tags": ["Logo", "Gaming", "Branding"],
+    "results": {
+      "metric1": "300% increase in brand recognition",
+      "metric2": "50K+ new followers in 30 days",
+      "metric3": "Featured on major gaming platforms"
+    },
+    "featured": true,
+    "views": 5420
+  },
+  {
+    "id": 2,
+    "title": "Viral YouTube Thumbnail",
+    "slug": "viral-youtube-thumbnail",
+    "category": "Thumbnail Design",
+    "description": "This thumbnail achieved 2M+ views and 15% CTR",
+    "longDescription": "Designed a high-impact thumbnail that utilized psychological triggers and visual hierarchy to achieve exceptional click-through rates.",
+    "client": "Tech Reviews Daily",
+    "completionDate": "2024-01-08",
+    "featuredImage": "/api/placeholder/800/600",
+    "images": [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600"
+    ],
+    "beforeImage": "/api/placeholder/400/300",
+    "afterImage": "/api/placeholder/400/300",
+    "tags": ["Thumbnail", "YouTube", "High CTR"],
+    "results": {
+      "metric1": "2M+ views in first week",
+      "metric2": "15.3% click-through rate",
+      "metric3": "Doubled average view duration"
+    },
+    "featured": true,
+    "views": 3210
+  },
+  {
+    "id": 3,
+    "title": "Brand Identity Package",
+    "slug": "brand-identity-package",
+    "category": "Complete Branding",
+    "description": "Full brand identity that tripled client conversions",
+    "longDescription": "Complete brand transformation including logo, color palette, typography, and brand guidelines for a growing SaaS company.",
+    "client": "CloudSync Solutions",
+    "completionDate": "2023-12-20",
+    "featuredImage": "/api/placeholder/800/600",
+    "images": [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600"
+    ],
+    "beforeImage": "/api/placeholder/400/300",
+    "afterImage": "/api/placeholder/400/300",
+    "tags": ["Branding", "Identity", "Package"],
+    "results": {
+      "metric1": "300% increase in conversions",
+      "metric2": "$500K investment secured",
+      "metric3": "85% customer recognition rate"
+    },
+    "featured": true,
+    "views": 6789
+  },
+  {
+    "id": 4,
+    "title": "Product Launch Video",
+    "slug": "product-launch-video",
+    "category": "Video Editing",
+    "description": "Launch video that generated $100K+ in first week",
+    "longDescription": "Professional video editing with motion graphics and color grading that perfectly captured the product's value proposition.",
+    "client": "InnovateTech",
+    "completionDate": "2023-12-15",
+    "featuredImage": "/api/placeholder/800/600",
+    "images": [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600"
+    ],
+    "beforeImage": "/api/placeholder/400/300",
+    "afterImage": "/api/placeholder/400/300",
+    "tags": ["Video", "Launch", "Sales"],
+    "results": {
+      "metric1": "$100K+ revenue in week 1",
+      "metric2": "500K+ organic views",
+      "metric3": "Featured on Product Hunt"
+    },
+    "featured": false,
+    "views": 4532
+  },
+  {
+    "id": 5,
+    "title": "E-commerce Brand Refresh",
+    "slug": "ecommerce-brand-refresh",
+    "category": "Branding",
+    "description": "Modern rebrand that doubled online sales",
+    "longDescription": "Complete visual refresh for an established e-commerce brand, including logo redesign, packaging, and marketing materials.",
+    "client": "Urban Essentials",
+    "completionDate": "2023-12-01",
+    "featuredImage": "/api/placeholder/800/600",
+    "images": [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600"
+    ],
+    "beforeImage": "/api/placeholder/400/300",
+    "afterImage": "/api/placeholder/400/300",
+    "tags": ["E-commerce", "Rebrand", "Sales"],
+    "results": {
+      "metric1": "200% increase in sales",
+      "metric2": "65% higher customer retention",
+      "metric3": "Award-winning packaging design"
+    },
+    "featured": false,
+    "views": 2891
+  }
+]

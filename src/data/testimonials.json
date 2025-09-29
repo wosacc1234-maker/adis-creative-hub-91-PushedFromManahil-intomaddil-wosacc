@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Johnson",
+    "role": "YouTube Creator (2M+ Subscribers)",
+    "company": "TechSavvy Channel",
+    "content": "Adil's thumbnails increased my CTR by 200%! My channel growth exploded after working with him. The designs are simply outstanding.",
+    "rating": 5,
+    "avatar": "/api/placeholder/80/80",
+    "date": "2024-01-15",
+    "projectType": "YouTube Thumbnails",
+    "verified": true
+  },
+  {
+    "id": 2,
+    "name": "Mike Rodriguez",
+    "role": "Tech Startup Founder",
+    "company": "NexGen Solutions",
+    "content": "The logo Adil designed became the face of our $10M startup. Professional, creative, and delivered exactly what we envisioned.",
+    "rating": 5,
+    "avatar": "/api/placeholder/80/80",
+    "date": "2024-01-10",
+    "projectType": "Logo Design",
+    "verified": true
+  },
+  {
+    "id": 3,
+    "name": "Emma Chen",
+    "role": "Marketing Director",
+    "company": "Digital Dynamics",
+    "content": "Working with Adil was seamless. Fast delivery, unlimited revisions, and results that exceeded our expectations. Highly recommended!",
+    "rating": 5,
+    "avatar": "/api/placeholder/80/80",
+    "date": "2024-01-05",
+    "projectType": "Brand Identity",
+    "verified": true
+  },
+  {
+    "id": 4,
+    "name": "James Wilson",
+    "role": "E-commerce Store Owner",
+    "company": "Urban Threads",
+    "content": "The branding package transformed my business. Sales increased 150% in just 3 months after the rebrand. Worth every penny!",
+    "rating": 5,
+    "avatar": "/api/placeholder/80/80",
+    "date": "2023-12-20",
+    "projectType": "Complete Branding",
+    "verified": true
+  },
+  {
+    "id": 5,
+    "name": "Aisha Patel",
+    "role": "Content Creator",
+    "company": "Lifestyle with Aisha",
+    "content": "Best investment for my channel! The thumbnail templates are generating consistent 10%+ CTR. My subscribers love the new look.",
+    "rating": 5,
+    "avatar": "/api/placeholder/80/80",
+    "date": "2023-12-15",
+    "projectType": "Channel Branding",
+    "verified": true
+  }
+]

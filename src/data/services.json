@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "Logo Design",
+    "slug": "logo-design",
+    "icon": "Palette",
+    "tagline": "Professional logos that make your brand unforgettable",
+    "description": "Get a custom logo design that captures your brand's essence and stands out in the market. Includes multiple concepts, unlimited revisions, and all file formats.",
+    "features": [
+      "3 Initial Concepts",
+      "Unlimited Revisions",
+      "All File Formats (AI, PNG, SVG, PDF)",
+      "Copyright Transfer",
+      "Brand Guidelines",
+      "Social Media Kit"
+    ],
+    "pricingTiers": [
+      {
+        "name": "Basic",
+        "price": 149,
+        "duration": "3-5 days",
+        "features": ["2 Concepts", "3 Revisions", "Basic Files"]
+      },
+      {
+        "name": "Standard",
+        "price": 299,
+        "duration": "5-7 days",
+        "features": ["3 Concepts", "Unlimited Revisions", "All Files", "Social Kit"],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": 599,
+        "duration": "7-10 days",
+        "features": ["5 Concepts", "Unlimited Revisions", "All Files", "Brand Guidelines", "Marketing Materials"]
+      }
+    ],
+    "deliveryTime": "3-10 days",
+    "popular": false,
+    "testimonialIds": [2, 4]
+  },
+  {
+    "id": 2,
+    "name": "YouTube Thumbnails",
+    "slug": "youtube-thumbnails",
+    "icon": "Play",
+    "tagline": "Eye-catching thumbnails that boost your click-through rates",
+    "description": "Get professionally designed YouTube thumbnails that stop the scroll and drive clicks. Optimized for mobile viewing and proven to increase CTR.",
+    "features": [
+      "High CTR Design",
+      "A/B Test Ready Variants",
+      "Mobile Optimized",
+      "24-48h Delivery",
+      "Editable Templates",
+      "Unlimited Revisions"
+    ],
+    "pricingTiers": [
+      {
+        "name": "Single",
+        "price": 49,
+        "duration": "24 hours",
+        "features": ["1 Thumbnail", "2 Revisions", "Source Files"]
+      },
+      {
+        "name": "Package of 5",
+        "price": 199,
+        "duration": "3-5 days",
+        "features": ["5 Thumbnails", "Unlimited Revisions", "Templates"],
+        "popular": true
+      },
+      {
+        "name": "Monthly (10)",
+        "price": 349,
+        "duration": "30 days",
+        "features": ["10 Thumbnails/month", "Priority Support", "Custom Templates", "Performance Analytics"]
+      }
+    ],
+    "deliveryTime": "24-48 hours",
+    "popular": true,
+    "testimonialIds": [1, 5]
+  },
+  {
+    "id": 3,
+    "name": "Video Editing",
+    "slug": "video-editing",
+    "icon": "Zap",
+    "tagline": "Professional video editing that keeps viewers engaged",
+    "description": "Transform your raw footage into polished, engaging videos. Includes color grading, motion graphics, sound design, and fast turnaround.",
+    "features": [
+      "Professional Color Grading",
+      "Motion Graphics & Animations",
+      "Sound Design & Mixing",
+      "Fast Turnaround",
+      "Multiple Revisions",
+      "4K Export Available"
+    ],
+    "pricingTiers": [
+      {
+        "name": "Basic Edit",
+        "price": 299,
+        "duration": "5-7 days",
+        "features": ["Up to 5 min video", "Basic color grading", "2 Revisions"]
+      },
+      {
+        "name": "Advanced Edit",
+        "price": 599,
+        "duration": "7-10 days",
+        "features": ["Up to 15 min video", "Advanced effects", "Motion graphics", "Unlimited revisions"],
+        "popular": true
+      },
+      {
+        "name": "Premium Package",
+        "price": 1299,
+        "duration": "10-14 days",
+        "features": ["Up to 30 min video", "Full production suite", "Custom animations", "Sound design", "4K delivery"]
+      }
+    ],
+    "deliveryTime": "5-14 days",
+    "popular": false,
+    "testimonialIds": [3]
+  },
+  {
+    "id": 4,
+    "name": "Channel Management",
+    "slug": "channel-management",
+    "icon": "Settings",
+    "tagline": "Complete YouTube channel management and growth optimization",
+    "description": "Let us handle your channel's growth strategy, SEO optimization, content planning, and analytics tracking while you focus on creating content.",
+    "features": [
+      "Content Strategy Planning",
+      "SEO Optimization",
+      "Analytics & Reporting",
+      "Audience Growth Tactics",
+      "Competitor Analysis",
+      "Monthly Strategy Calls"
+    ],
+    "pricingTiers": [
+      {
+        "name": "Starter",
+        "price": 599,
+        "duration": "per month",
+        "features": ["Basic SEO", "Monthly reports", "Email support"]
+      },
+      {
+        "name": "Growth",
+        "price": 1299,
+        "duration": "per month",
+        "features": ["Full SEO optimization", "Weekly reports", "Strategy calls", "Content calendar"],
+        "popular": true
+      },
+      {
+        "name": "Enterprise",
+        "price": 2499,
+        "duration": "per month",
+        "features": ["Dedicated manager", "Daily optimization", "Priority support", "Custom strategies", "Team training"]
+      }
+    ],
+    "deliveryTime": "Ongoing",
+    "popular": false,
+    "testimonialIds": [1]
+  },
+  {
+    "id": 5,
+    "name": "YouTube Channel Branding",
+    "slug": "youtube-channel-branding",
+    "icon": "Brush",
+    "tagline": "Complete visual identity package for your YouTube channel",
+    "description": "Get a cohesive brand identity for your channel including custom logo, channel art, thumbnail templates, and comprehensive brand guidelines.",
+    "features": [
+      "Custom Channel Art",
+      "Professional Logo Design",
+      "Thumbnail Templates (10+)",
+      "Brand Color Palette",
+      "Typography Guidelines",
+      "Social Media Assets"
+    ],
+    "pricingTiers": [
+      {
+        "name": "Essentials",
+        "price": 399,
+        "duration": "7-10 days",
+        "features": ["Logo", "Channel art", "5 thumbnail templates"]
+      },
+      {
+        "name": "Complete",
+        "price": 799,
+        "duration": "10-14 days",
+        "features": ["Full branding package", "15 templates", "Brand guidelines", "Social kit"],
+        "popular": true
+      },
+      {
+        "name": "Ultimate",
+        "price": 1499,
+        "duration": "14-21 days",
+        "features": ["Premium branding", "25+ templates", "Animated assets", "Merchandise designs", "Ongoing support"]
+      }
+    ],
+    "deliveryTime": "7-21 days",
+    "popular": false,
+    "testimonialIds": [5]
+  }
+]

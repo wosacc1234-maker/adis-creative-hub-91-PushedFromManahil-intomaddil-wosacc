@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "5 YouTube Thumbnail Secrets That Boost CTR by 300%",
+    "slug": "youtube-thumbnail-secrets-boost-ctr",
+    "excerpt": "Discover the psychology behind high-converting thumbnails and the exact techniques I use to create click-magnets for my clients.",
+    "content": "Creating thumbnails that stand out in the crowded YouTube ecosystem requires understanding both design principles and viewer psychology. After analyzing 1000+ successful thumbnails, I've identified 5 key secrets that consistently boost click-through rates...\n\n## Secret 1: Contrast is King\n\nThe human eye is naturally drawn to contrast. Using complementary colors and sharp contrasts between foreground and background elements makes your thumbnail pop in the feed.\n\n## Secret 2: The 3-Second Rule\n\nViewers spend an average of 3 seconds deciding whether to click. Your thumbnail must communicate value instantly.\n\n## Secret 3: Faces and Emotions\n\nThumbnails with expressive faces get 154% more clicks. The emotion should match the content's promise.\n\n## Secret 4: Text Hierarchy\n\nUse 3-5 words maximum. Make the most important word largest and most contrasted.\n\n## Secret 5: Consistency Builds Trust\n\nCreate a recognizable style for your channel. Viewers should identify your content at a glance.",
+    "category": "YouTube Growth",
+    "author": {
+      "name": "Adil",
+      "avatar": "/api/placeholder/80/80",
+      "bio": "YouTube Growth Specialist & Design Expert"
+    },
+    "date": "2024-01-20",
+    "readTime": "8 min read",
+    "featuredImage": "/api/placeholder/800/400",
+    "tags": ["YouTube", "Thumbnails", "CTR", "Growth"],
+    "featured": true,
+    "views": 15420,
+    "likes": 892
+  },
+  {
+    "id": 2,
+    "title": "The Ultimate Logo Design Checklist for 2024",
+    "slug": "ultimate-logo-design-checklist-2024",
+    "excerpt": "Everything you need to know to create logos that build trust, recognition, and drive business growth in today's competitive market.",
+    "content": "A great logo is more than just a pretty symbol. It's the foundation of your brand identity and often the first impression potential customers have of your business...",
+    "category": "Design Tips",
+    "author": {
+      "name": "Adil",
+      "avatar": "/api/placeholder/80/80",
+      "bio": "YouTube Growth Specialist & Design Expert"
+    },
+    "date": "2024-01-18",
+    "readTime": "12 min read",
+    "featuredImage": "/api/placeholder/800/400",
+    "tags": ["Logo", "Branding", "Design", "Business"],
+    "featured": false,
+    "views": 8732,
+    "likes": 456
+  },
+  {
+    "id": 3,
+    "title": "Case Study: How a Simple Rebrand Generated $2M in Revenue",
+    "slug": "rebrand-case-study-2m-revenue",
+    "excerpt": "Deep dive into a complete brand transformation that took a struggling startup to unicorn status in just 18 months.",
+    "content": "When TechFlow approached me in early 2023, they were struggling with brand recognition and customer trust...",
+    "category": "Case Studies",
+    "author": {
+      "name": "Adil",
+      "avatar": "/api/placeholder/80/80",
+      "bio": "YouTube Growth Specialist & Design Expert"
+    },
+    "date": "2024-01-16",
+    "readTime": "15 min read",
+    "featuredImage": "/api/placeholder/800/400",
+    "tags": ["Case Study", "Rebranding", "Revenue", "Success"],
+    "featured": true,
+    "views": 23156,
+    "likes": 1203
+  }
+]

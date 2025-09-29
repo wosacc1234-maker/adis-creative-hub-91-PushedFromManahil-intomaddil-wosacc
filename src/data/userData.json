@@ -1,0 +1,120 @@
+{
+  "user": {
+    "id": "user_123",
+    "email": "demo@example.com",
+    "name": "Demo User",
+    "avatar": "/api/placeholder/120/120",
+    "joinDate": "2023-10-15",
+    "membershipTier": "Premium",
+    "verified": true
+  },
+  "tokens": {
+    "balance": 850,
+    "totalEarned": 1250,
+    "totalSpent": 400,
+    "history": [
+      {
+        "id": "txn_1",
+        "type": "earned",
+        "amount": 50,
+        "description": "7-day login streak bonus",
+        "date": "2024-01-20T08:00:00Z"
+      },
+      {
+        "id": "txn_2",
+        "type": "spent",
+        "amount": -100,
+        "description": "Redeemed: Premium thumbnail template pack",
+        "date": "2024-01-18T14:30:00Z"
+      },
+      {
+        "id": "txn_3",
+        "type": "earned",
+        "amount": 200,
+        "description": "Referral bonus: 2 friends joined",
+        "date": "2024-01-15T11:20:00Z"
+      }
+    ]
+  },
+  "streak": {
+    "current": 12,
+    "longest": 28,
+    "lastCheckIn": "2024-01-20",
+    "nextMilestone": 30,
+    "rewards": {
+      "7": 50,
+      "14": 100,
+      "30": 250,
+      "60": 500,
+      "90": 1000
+    }
+  },
+  "referrals": {
+    "code": "DEMO2024",
+    "totalReferred": 5,
+    "successfulConversions": 3,
+    "earningsFromReferrals": 300,
+    "referralLink": "https://adilgfx.com/ref/DEMO2024"
+  },
+  "orders": [
+    {
+      "id": "ord_001",
+      "service": "YouTube Thumbnails",
+      "package": "Package of 5",
+      "status": "completed",
+      "orderDate": "2024-01-10",
+      "completionDate": "2024-01-13",
+      "amount": 199
+    },
+    {
+      "id": "ord_002",
+      "service": "Logo Design",
+      "package": "Standard",
+      "status": "in_progress",
+      "orderDate": "2024-01-18",
+      "expectedCompletion": "2024-01-25",
+      "amount": 299
+    }
+  ],
+  "achievements": [
+    {
+      "id": "ach_1",
+      "name": "First Order",
+      "description": "Placed your first order",
+      "icon": "ShoppingBag",
+      "unlocked": true,
+      "date": "2023-10-20"
+    },
+    {
+      "id": "ach_2",
+      "name": "Token Collector",
+      "description": "Earned 500+ tokens",
+      "icon": "Coins",
+      "unlocked": true,
+      "date": "2024-01-18"
+    },
+    {
+      "id": "ach_3",
+      "name": "Referral Master",
+      "description": "Referred 5+ friends",
+      "icon": "Users",
+      "unlocked": true,
+      "date": "2024-01-15"
+    },
+    {
+      "id": "ach_4",
+      "name": "Streak Champion",
+      "description": "Maintained a 30-day login streak",
+      "icon": "Flame",
+      "unlocked": false,
+      "progress": 12,
+      "target": 30
+    }
+  ],
+  "preferences": {
+    "emailNotifications": true,
+    "pushNotifications": true,
+    "newsletter": true,
+    "theme": "dark"
+  }
+}
