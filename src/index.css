@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Adil's Portfolio Design System - Premium Apple-like with YouTube Creative Accents */
+
+@layer base {
+  :root {
+    /* Background & Surface */
+    --background: 0 0% 100%;
+    --foreground: 217 33% 17%;
+    --surface: 0 0% 98%;
+    --surface-foreground: 217 33% 17%;
+
+    /* Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 217 33% 17%;
+    --card-hover: 0 0% 97%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 33% 17%;
+
+    /* Premium Grays - Apple-inspired */
+    --primary: 217 33% 17%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 20% 25%;
+    --primary-lighter: 217 15% 35%;
+
+    /* YouTube Red System - Creative Accents */
+    --youtube-red: 0 100% 50%;
+    --youtube-red-hover: 0 90% 45%;
+    --youtube-red-foreground: 0 0% 100%;
+
+    /* Secondary - Elegant neutrals */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 217 33% 17%;
+    --secondary-hover: 220 14% 93%;
+
+    /* Muted tones */
+    --muted: 220 14% 96%;
+    --muted-foreground: 217 13% 45%;
+
+    /* Accent - Subtle creative touches */
+    --accent: 220 14% 96%;
+    --accent-foreground: 217 33% 17%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 33% 17%;
+
+    /* Creative Gradients - YouTube inspired */
+    --gradient-youtube: linear-gradient(135deg, hsl(0 100% 50%) 0%, hsl(25 100% 55%) 50%, hsl(50 100% 60%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(217 33% 17%) 0%, hsl(217 20% 25%) 100%);
+    --gradient-creative: linear-gradient(135deg, hsl(262 90% 60%) 0%, hsl(340 85% 65%) 50%, hsl(25 100% 55%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(220 14% 96%) 0%, hsl(0 0% 100%) 100%);
+
+    /* Shadows - Premium depth */
+    --shadow-small: 0 2px 8px -2px hsl(217 33% 17% / 0.08);
+    --shadow-medium: 0 8px 25px -8px hsl(217 33% 17% / 0.15);
+    --shadow-large: 0 20px 50px -12px hsl(217 33% 17% / 0.25);
+    --shadow-glow: 0 0 30px hsl(0 100% 50% / 0.3);
+
+    --radius: 0.75rem;
+
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Background & Surface */
+    --background: 217 33% 8%;
+    --foreground: 0 0% 98%;
+    --surface: 217 28% 10%;
+    --surface-foreground: 0 0% 98%;
+
+    /* Dark Card System */
+    --card: 217 28% 10%;
+    --card-foreground: 0 0% 98%;
+    --card-hover: 217 28% 12%;
+
+    /* Dark Popover */
+    --popover: 217 28% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Dark Primary - Premium whites */
+    --primary: 0 0% 98%;
+    --primary-foreground: 217 33% 17%;
+    --primary-light: 0 0% 90%;
+    --primary-lighter: 0 0% 80%;
+
+    /* YouTube Red stays consistent in dark */
+    --youtube-red: 0 100% 50%;
+    --youtube-red-hover: 0 90% 45%;
+    --youtube-red-foreground: 0 0% 100%;
+
+    /* Dark Secondary */
+    --secondary: 217 25% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 217 25% 18%;
+
+    /* Dark Muted */
+    --muted: 217 25% 15%;
+    --muted-foreground: 217 10% 65%;
+
+    /* Dark Accent */
+    --accent: 217 25% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Dark Status colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 65% 50%;
+    --success-foreground: 0 0% 100%;
+
+    /* Dark Borders & Inputs */
+    --border: 217 25% 18%;
+    --input: 217 25% 18%;
+    --ring: 0 0% 98%;
+
+    /* Dark Creative Gradients */
+    --gradient-youtube: linear-gradient(135deg, hsl(0 100% 50%) 0%, hsl(25 100% 55%) 50%, hsl(50 100% 60%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(217 28% 8%) 0%, hsl(217 25% 12%) 100%);
+    --gradient-creative: linear-gradient(135deg, hsl(262 90% 60%) 0%, hsl(340 85% 65%) 50%, hsl(25 100% 55%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(217 28% 8%) 0%, hsl(217 25% 10%) 100%);
+
+    /* Dark Shadows - Enhanced depth */
+    --shadow-small: 0 2px 8px -2px hsl(0 0% 0% / 0.2);
+    --shadow-medium: 0 8px 25px -8px hsl(0 0% 0% / 0.3);
+    --shadow-large: 0 20px 50px -12px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 30px hsl(0 100% 50% / 0.4);
+
+    /* Dark Sidebar */
+    --sidebar-background: 217 33% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 217 33% 17%;
+    --sidebar-accent: 217 25% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 217 25% 18%;
+    --sidebar-ring: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Typography enhancements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Selection styling */
+  ::selection {
+    background: hsl(var(--youtube-red) / 0.2);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  /* Button Variants - Professional with Creative Accents */
+  .btn-youtube {
+    @apply bg-[var(--gradient-youtube)] text-white font-medium px-6 py-3 rounded-lg 
+           hover:shadow-[var(--shadow-glow)] transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-premium {
+    @apply bg-[var(--gradient-premium)] text-white font-medium px-6 py-3 rounded-lg 
+           hover:bg-[var(--gradient-premium)] hover:shadow-[var(--shadow-medium)] 
+           transition-all duration-300;
+  }
+
+  .btn-ghost-youtube {
+    @apply border-2 border-[hsl(var(--youtube-red))] text-[hsl(var(--youtube-red))] 
+           font-medium px-6 py-3 rounded-lg hover:bg-[hsl(var(--youtube-red))] 
+           hover:text-white transition-all duration-300;
+  }
+
+  /* Card Components */
+  .card-premium {
+    @apply bg-card border border-border rounded-xl p-6 shadow-[var(--shadow-small)] 
+           hover:shadow-[var(--shadow-medium)] transition-all duration-300 hover:border-[hsl(var(--youtube-red)/0.3)];
+  }
+
+  .card-creative {
+    @apply bg-[var(--gradient-subtle)] border border-border rounded-xl p-6 
+           shadow-[var(--shadow-small)] hover:shadow-[var(--shadow-medium)] 
+           transition-all duration-300 relative overflow-hidden;
+  }
+
+  /* Portfolio hover effects */
+  .portfolio-item {
+    @apply relative overflow-hidden rounded-xl transition-transform duration-500 hover:scale-105;
+  }
+
+  .portfolio-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent 
+           opacity-0 hover:opacity-100 transition-opacity duration-300 
+           flex items-end justify-start p-6;
+  }
+
+  /* Animations */
+  .fade-in-up {
+    @apply animate-[fadeInUp_0.6s_cubic-bezier(0.4,0,0.2,1)_forwards];
+  }
+
+  .slide-in-right {
+    @apply animate-[slideInRight_0.5s_cubic-bezier(0.4,0,0.2,1)_forwards];
+  }
+}
+
+@layer utilities {
+  .bg-gradient-youtube {
+    background: var(--gradient-youtube);
+  }
+
+  .bg-gradient-premium {
+    background: var(--gradient-premium);
+  }
+
+  .bg-gradient-creative {
+    background: var(--gradient-creative);
+  }
+
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  /* Fixed gradient text utility */
+  .text-gradient-youtube {
+    background: var(--gradient-youtube);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+  }
+
+  .shadow-premium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
+
+/* Custom keyframes for animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
