@@ -1,5 +1,6 @@
-import { Palette, Play, Zap, CheckCircle } from "lucide-react"
+import { Palette, Play, Zap, CheckCircle, Settings, Brush } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 const services = [
   {
@@ -25,6 +26,22 @@ const services = [
     features: ["Color Grading", "Motion Graphics", "Sound Design", "Fast Turnaround"],
     price: "From $299",
     popular: false
+  },
+  {
+    icon: Settings,
+    title: "Channel Management",
+    description: "Complete YouTube channel management and growth optimization",
+    features: ["Content Strategy", "SEO Optimization", "Analytics Tracking", "Audience Growth"],
+    price: "From $599",
+    popular: false
+  },
+  {
+    icon: Brush,
+    title: "YouTube Channel Branding",
+    description: "Complete visual identity package for your YouTube channel",
+    features: ["Channel Art", "Logo Design", "Thumbnail Templates", "Brand Guidelines"],
+    price: "From $399",
+    popular: false
   }
 ]
 
@@ -42,55 +59,66 @@ export function ServicesOverview() {
           </p>
         </div>
 
-        {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service) => {
-            const Icon = service.icon
-            return (
-              <div 
-                key={service.title}
-                className={`relative card-premium ${service.popular ? 'ring-2 ring-youtube-red' : ''}`}
-              >
-                {service.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-youtube text-white px-4 py-1 rounded-full text-sm font-medium">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
+        {/* Services Carousel */}
+        <div className="relative max-w-6xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {services.map((service) => {
+                const Icon = service.icon
+                return (
+                  <CarouselItem key={service.title} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className={`relative card-premium h-full ${service.popular ? 'ring-2 ring-youtube-red' : ''}`}>
+                      {service.popular && (
+                        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                          <span className="bg-gradient-youtube text-white px-4 py-1 rounded-full text-sm font-medium">
+                            Most Popular
+                          </span>
+                        </div>
+                      )}
 
-                <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-youtube rounded-xl mb-6">
-                    <Icon className="h-8 w-8 text-white" />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-6">{service.description}</p>
-                  
-                  <div className="space-y-3 mb-8">
-                    {service.features.map((feature) => (
-                      <div key={feature} className="flex items-center justify-center space-x-2">
-                        <CheckCircle className="h-4 w-4 text-youtube-red" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                      <div className="text-center h-full flex flex-col">
+                        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-youtube rounded-xl mb-6 mx-auto">
+                          <Icon className="h-8 w-8 text-white" />
+                        </div>
+                        
+                        <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
+                        <p className="text-muted-foreground mb-6 flex-grow">{service.description}</p>
+                        
+                        <div className="space-y-3 mb-8">
+                          {service.features.map((feature) => (
+                            <div key={feature} className="flex items-center justify-center space-x-2">
+                              <CheckCircle className="h-4 w-4 text-youtube-red flex-shrink-0" />
+                              <span className="text-sm text-muted-foreground">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        <div className="text-2xl font-bold text-foreground mb-6">{service.price}</div>
+                        
+                        <Button 
+                          className={`w-full font-medium ${
+                            service.popular 
+                              ? 'bg-gradient-youtube hover:shadow-glow' 
+                              : 'variant-outline border-youtube-red text-youtube-red hover:bg-youtube-red hover:text-white'
+                          } transition-all duration-300`}
+                        >
+                          Get Started
+                        </Button>
                       </div>
-                    ))}
-                  </div>
-                  
-                  <div className="text-2xl font-bold text-foreground mb-6">{service.price}</div>
-                  
-                  <Button 
-                    className={`w-full font-medium ${
-                      service.popular 
-                        ? 'bg-gradient-youtube hover:shadow-glow' 
-                        : 'variant-outline border-youtube-red text-youtube-red hover:bg-youtube-red hover:text-white'
-                    } transition-all duration-300`}
-                  >
-                    Get Started
-                  </Button>
-                </div>
-              </div>
-            )
-          })}
+                    </div>
+                  </CarouselItem>
+                )
+              })}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-12 border-youtube-red text-youtube-red hover:bg-youtube-red hover:text-white" />
+            <CarouselNext className="hidden md:flex -right-12 border-youtube-red text-youtube-red hover:bg-youtube-red hover:text-white" />
+          </Carousel>
         </div>
 
         {/* Bottom CTA */}
