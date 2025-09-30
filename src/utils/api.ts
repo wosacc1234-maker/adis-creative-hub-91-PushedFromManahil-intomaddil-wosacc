@@ -188,21 +188,39 @@ const handleApiError = (error: any, fallbackData: any) => {
 };
 
 /**
- * Fetch all blog posts
- * @returns Promise<Blog[]>
+ * Fetch all blog posts with pagination
+ * @param page - Page number (default: 1)
+ * @param limit - Items per page (default: 10)
+ * @returns Promise<PaginatedResponse<Blog>>
  */
-export async function fetchBlogs(): Promise<Blog[]> {
+export async function fetchBlogs(page: number = 1, limit: number = 10): Promise<{ data: Blog[]; page: number; totalPages: number; totalItems: number; }> {
   if (USE_MOCK_DATA) {
     await simulateDelay();
-    return blogsData as Blog[];
+    const allBlogs = blogsData as Blog[];
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+    const paginatedBlogs = allBlogs.slice(startIndex, endIndex);
+    
+    return {
+      data: paginatedBlogs,
+      page,
+      totalPages: Math.ceil(allBlogs.length / limit),
+      totalItems: allBlogs.length,
+    };
   }
 
   try {
-    const response = await fetch(`${API_BASE_URL}/api/blogs`);
+    const response = await fetch(`${API_BASE_URL}/api/blogs?page=${page}&limit=${limit}`);
     if (!response.ok) throw new Error('Failed to fetch blogs');
     return await response.json();
   } catch (error) {
-    return handleApiError(error, blogsData);
+    const allBlogs = blogsData as Blog[];
+    return {
+      data: allBlogs.slice(0, limit),
+      page: 1,
+      totalPages: Math.ceil(allBlogs.length / limit),
+      totalItems: allBlogs.length,
+    };
   }
 }
 
@@ -249,29 +267,59 @@ export async function fetchTestimonials(): Promise<Testimonial[]> {
 }
 
 /**
- * Fetch portfolio items
+ * Fetch portfolio items with pagination and filtering
+ * @param page - Page number (default: 1)
+ * @param limit - Items per page (default: 10)
  * @param category - Optional category filter
- * @returns Promise<PortfolioItem[]>
+ * @returns Promise<PaginatedResponse<PortfolioItem>>
  */
-export async function fetchPortfolio(category?: string): Promise<PortfolioItem[]> {
+export async function fetchPortfolio(
+  page: number = 1,
+  limit: number = 10,
+  category?: string
+): Promise<{ data: PortfolioItem[]; page: number; totalPages: number; totalItems: number; }> {
   if (USE_MOCK_DATA) {
     await simulateDelay();
     let items = portfolioData as PortfolioItem[];
+    
+    // Filter by category
     if (category && category !== 'All') {
       items = items.filter(item => item.category === category);
     }
-    return items;
+    
+    // Paginate
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+    const paginatedItems = items.slice(startIndex, endIndex);
+    
+    return {
+      data: paginatedItems,
+      page,
+      totalPages: Math.ceil(items.length / limit),
+      totalItems: items.length,
+    };
   }
 
   try {
-    const url = category 
-      ? `${API_BASE_URL}/api/portfolio?category=${encodeURIComponent(category)}`
-      : `${API_BASE_URL}/api/portfolio`;
-    const response = await fetch(url);
+    const params = new URLSearchParams({
+      page: page.toString(),
+      limit: limit.toString(),
+    });
+    if (category && category !== 'All') {
+      params.append('category', category);
+    }
+    
+    const response = await fetch(`${API_BASE_URL}/api/portfolio?${params}`);
     if (!response.ok) throw new Error('Failed to fetch portfolio');
     return await response.json();
   } catch (error) {
-    return handleApiError(error, portfolioData);
+    const items = portfolioData as PortfolioItem[];
+    return {
+      data: items.slice(0, limit),
+      page: 1,
+      totalPages: Math.ceil(items.length / limit),
+      totalItems: items.length,
+    };
   }
 }
 
@@ -421,16 +469,28 @@ export async function fetchUserData(): Promise<UserData | null> {
 export async function submitContactForm(formData: {
   name: string;
   email: string;
-  subject: string;
+  service: string;
+  budget?: string;
   message: string;
+  timeline?: string;
+  phone?: string;
 }): Promise<{ success: boolean; message: string }> {
   if (USE_MOCK_DATA) {
-    await simulateDelay(500);
-    console.log('Contact form submitted:', formData);
-    return {
-      success: true,
-      message: 'Thank you for your message! We\'ll get back to you within 24 hours.',
-    };
+    await simulateDelay(800);
+    // Simulate 95% success rate
+    const success = Math.random() > 0.05;
+    
+    if (success) {
+      return {
+        success: true,
+        message: 'Thank you for your message! We\'ll get back to you within 2 hours.',
+      };
+    } else {
+      return {
+        success: false,
+        message: 'Failed to send message. Please try again.',
+      };
+    }
   }
 
   try {
@@ -438,6 +498,7 @@ export async function submitContactForm(formData: {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-CSRF-Token': 'placeholder-for-csrf-token', // CSRF protection placeholder
       },
       body: JSON.stringify(formData),
     });
@@ -450,7 +511,7 @@ export async function submitContactForm(formData: {
   } catch (error) {
     return {
       success: false,
-      message: 'Failed to send message. Please try again later.',
+      message: 'Network error. Please check your connection and try again.',
     };
   }
 }
