@@ -53,9 +53,9 @@ export function HeroSection() {
               <Button 
                 variant="secondary" 
                 size="lg"
-                className="font-semibold text-lg px-8 py-4 transition-smooth"
+                className="font-semibold text-lg px-8 py-4 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-fade-in"
               >
-                <Play className="mr-2 h-5 w-5" />
+                <Play className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
                 Watch My Intro
               </Button>
             </Link>
