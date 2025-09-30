@@ -1,5 +1,8 @@
-import { CheckCircle, Clock, Zap, RefreshCw } from "lucide-react"
+import { CheckCircle, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { PricingCalculator } from "@/components/pricing-calculator"
+import { SEOHead } from "@/components/seo-head"
+import { useAnalytics } from "@/utils/analytics"
 
 const services = [
   {
@@ -195,22 +198,41 @@ const addOns = [
 ]
 
 export default function Services() {
+  const analytics = useAnalytics();
+
   return (
-    <main className="pt-24 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Page header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-            Services & <span className="text-gradient-youtube">Pricing</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-            Professional design services with transparent pricing. Choose the package that fits your needs, 
-            or contact me for a custom solution.
-          </p>
-          <p className="text-lg text-youtube-red font-medium">
-            💬 Pricing depends on your specific project requirements. Chat with me for a free personalized quote!
-          </p>
-        </div>
+    <>
+      <SEOHead
+        title="Services & Pricing - Professional Design Services | Adil GFX"
+        description="Transparent pricing for logo design, YouTube thumbnails, video editing, and complete branding. Choose packages that fit your budget or get a custom quote."
+        keywords="logo design pricing, YouTube thumbnail service, video editing rates, branding packages"
+      />
+
+      <main className="pt-24 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Page header */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
+              Services & <span className="text-gradient-youtube">Pricing</span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+              Professional design services with transparent pricing. Choose the package that fits your needs, 
+              or contact me for a custom solution.
+            </p>
+            <p className="text-lg text-youtube-red font-medium">
+              💬 Pricing depends on your specific project requirements. Chat with me for a free personalized quote!
+            </p>
+          </div>
+
+          {/* Pricing Calculator Section */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+              Get an Instant <span className="text-gradient-youtube">Quote</span>
+            </h2>
+            <div className="max-w-2xl mx-auto">
+              <PricingCalculator />
+            </div>
+          </div>
 
         {/* Services */}
         {services.map((service, serviceIndex) => (
@@ -352,5 +374,6 @@ export default function Services() {
         </div>
       </div>
     </main>
-  )
+    </>
+  );
 }
