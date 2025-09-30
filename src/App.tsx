@@ -12,6 +12,7 @@ import { Chatbot } from "@/components/chatbot";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { ReturningVisitorBanner } from "@/components/returning-visitor-banner";
 import { AnalyticsConsentModal } from "@/components/analytics-consent-modal";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
@@ -36,6 +37,7 @@ const App = () => (
             <Toaster />
             <Sonner />
             <BrowserRouter>
+              <ScrollToTop />
               <Navigation />
               <ReturningVisitorBanner />
               <Routes>
