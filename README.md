@@ -6,7 +6,9 @@ A modern, conversion-focused React + TypeScript web application for professional
 
 ## Project Info
 
-**URL**: https://lovable.dev/projects/bb856f5c-3dfe-464a-a465-9444f237ec06
+**Lovable Project URL**: https://lovable.dev/projects/bb856f5c-3dfe-464a-a465-9444f237ec06  
+**Repository**: adis-creative-hub-91  
+**Live Preview**: https://adis-creative-hub-91.lovable.app
 
 ---
 
@@ -349,11 +351,11 @@ All colors use semantic tokens from `index.css` and `tailwind.config.ts`:
 ### Local Development
 
 \`\`\`sh
-# Clone repository
-git clone <YOUR_GIT_URL>
+# Clone repository (if using GitHub integration)
+git clone https://github.com/YOUR_USERNAME/adis-creative-hub-91.git
 
 # Navigate to project
-cd <YOUR_PROJECT_NAME>
+cd adis-creative-hub-91
 
 # Install dependencies
 npm i
@@ -467,5 +469,6 @@ MIT License
 ## 👨‍💻 Author
 
 **Adil GFX**  
-Professional Design Services  
-[adilgfx.com](https://adilgfx.com)
+Professional Design & Creative Services  
+Portfolio: [View Live Site](https://adis-creative-hub-91.lovable.app)  
+Contact: hello@adilgfx.com
