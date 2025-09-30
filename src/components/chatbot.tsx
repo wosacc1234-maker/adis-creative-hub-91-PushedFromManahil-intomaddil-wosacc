@@ -197,7 +197,7 @@ Would you like to schedule a free 15-minute consultation call?`
     <>
       {/* Chat Widget */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-96 bg-card border border-border rounded-xl shadow-glow z-50 flex flex-col animate-fade-in">
+        <div className="fixed bottom-24 left-6 w-80 h-96 bg-card border border-border rounded-xl shadow-glow z-50 flex flex-col animate-fade-in">
           {/* Header */}
           <div className="bg-gradient-youtube text-white p-4 rounded-t-xl flex items-center justify-between">
             <div className="flex items-center space-x-2">
