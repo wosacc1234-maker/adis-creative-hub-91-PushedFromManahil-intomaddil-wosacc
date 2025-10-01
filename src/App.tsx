@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/components/theme-provider";
+import { GlobalSettingsProvider } from "@/components/global-settings-provider";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
@@ -13,6 +14,7 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { ReturningVisitorBanner } from "@/components/returning-visitor-banner";
 import { AnalyticsConsentModal } from "@/components/analytics-consent-modal";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { DynamicPageRenderer } from "@/components/dynamic-page-renderer";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
@@ -32,6 +34,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
       <ThemeProvider defaultTheme="light" storageKey="adil-portfolio-theme">
+        <GlobalSettingsProvider>
         <TooltipProvider>
           <ErrorBoundary>
             <Toaster />
@@ -52,6 +55,7 @@ const App = () => (
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/auth" element={<Auth />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/page/:slug" element={<DynamicPageRenderer />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <Footer />
@@ -61,6 +65,7 @@ const App = () => (
             </BrowserRouter>
           </ErrorBoundary>
         </TooltipProvider>
+        </GlobalSettingsProvider>
       </ThemeProvider>
     </HelmetProvider>
   </QueryClientProvider>

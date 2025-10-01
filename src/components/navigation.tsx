@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom"
 import { Menu, X, Play, Palette, User, Phone, HelpCircle, Briefcase, FileText, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { useGlobalSettings } from "@/components/global-settings-provider"
 import { cn } from "@/lib/utils"
 
 const navigation = [
@@ -19,6 +20,7 @@ const navigation = [
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const { settings } = useGlobalSettings()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -32,7 +34,7 @@ export function Navigation() {
             <div className="w-8 h-8 bg-gradient-youtube rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">A</span>
             </div>
-            <span>Adil GFX</span>
+            <span>{settings?.content?.siteTitle || 'Adil GFX'}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -62,7 +64,7 @@ export function Navigation() {
             <ThemeToggle />
             <Link to="/contact">
               <Button className="bg-gradient-youtube hover:shadow-glow transition-all duration-300 font-medium">
-                Hire Me Now
+                {settings?.content?.headerCtaText || 'Hire Me Now'}
               </Button>
             </Link>
           </div>
@@ -110,7 +112,7 @@ export function Navigation() {
             <div className="pt-4 px-4">
               <Link to="/contact">
                 <Button className="w-full bg-gradient-youtube hover:shadow-glow transition-all duration-300 font-medium">
-                  Hire Me Now
+                  {settings?.content?.headerCtaText || 'Hire Me Now'}
                 </Button>
               </Link>
             </div>

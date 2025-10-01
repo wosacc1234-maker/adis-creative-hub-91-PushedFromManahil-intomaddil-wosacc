@@ -24,6 +24,160 @@ import userDataFile from '@/data/userData.json';
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 const USE_MOCK_DATA = import.meta.env.VITE_USE_MOCK_DATA !== 'false'; // Default to true
 
+/**
+ * Fetch global site settings
+ * @returns Promise<Record<string, any>>
+ */
+export async function fetchGlobalSettings(): Promise<Record<string, any>> {
+  if (USE_MOCK_DATA) {
+    await simulateDelay();
+    return {
+      branding: {
+        siteLogo: '/logo.png',
+        primaryColor: '#FF0000',
+        secondaryColor: '#1F2937',
+        fontFamily: 'Inter'
+      },
+      contact: {
+        email: 'hello@adilgfx.com',
+        phone: '+1 (555) 123-4567',
+        whatsapp: '+1234567890'
+      },
+      social: {
+        facebook: 'https://facebook.com/adilgfx',
+        instagram: 'https://instagram.com/adilgfx',
+        linkedin: 'https://linkedin.com/in/adilgfx',
+        youtube: 'https://youtube.com/@adilgfx'
+      },
+      features: {
+        enableReferrals: true,
+        enableStreaks: true,
+        enableTokens: true,
+        enablePopups: true
+      }
+    };
+  }
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/settings.php`);
+    if (!response.ok) throw new Error('Failed to fetch settings');
+    return await response.json();
+  } catch (error) {
+    return handleApiError(error, {});
+  }
+}
+
+/**
+ * Fetch page content by slug
+ * @param slug - Page slug
+ * @returns Promise<Page | null>
+ */
+export async function fetchPageBySlug(slug: string): Promise<any | null> {
+  if (USE_MOCK_DATA) {
+    await simulateDelay();
+    // Return mock page structure
+    return {
+      id: 1,
+      title: 'Home',
+      slug: 'home',
+      metaTitle: 'Adil GFX - Professional Design Services',
+      metaDescription: 'Transform your brand with premium designs',
+      sections: [
+        {
+          type: 'hero',
+          title: 'Transform Your Brand',
+          subtitle: 'Premium Design Services',
+          description: 'Professional logo design, YouTube thumbnails, and video editing',
+          ctaText: 'Get Started',
+          ctaUrl: '/contact'
+        }
+      ]
+    };
+  }
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/pages.php/${slug}`);
+    if (!response.ok) throw new Error('Page not found');
+    return await response.json();
+  } catch (error) {
+    return handleApiError(error, null);
+  }
+}
+
+/**
+ * Fetch carousel slides
+ * @param carouselName - Name of the carousel
+ * @returns Promise<CarouselSlide[]>
+ */
+export async function fetchCarouselSlides(carouselName: string): Promise<any[]> {
+  if (USE_MOCK_DATA) {
+    await simulateDelay();
+    return [
+      {
+        id: 1,
+        title: 'Transform Your Brand',
+        subtitle: 'Premium Design Services',
+        description: 'Professional logo design, YouTube thumbnails, and video editing',
+        imageUrl: '/api/placeholder/800/600',
+        ctaText: 'Get Started',
+        ctaUrl: '/contact'
+      }
+    ];
+  }
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/carousel.php?name=${carouselName}`);
+    if (!response.ok) throw new Error('Failed to fetch carousel');
+    return await response.json();
+  } catch (error) {
+    return handleApiError(error, []);
+  }
+}
+
+/**
+ * Upload media file
+ * @param file - File to upload
+ * @param altText - Alt text for accessibility
+ * @param caption - Image caption
+ * @returns Promise<UploadResult>
+ */
+export async function uploadMedia(file: File, altText: string = '', caption: string = ''): Promise<any> {
+  if (USE_MOCK_DATA) {
+    await simulateDelay(1000);
+    return {
+      success: true,
+      file: {
+        id: Date.now(),
+        filename: file.name,
+        url: '/api/placeholder/400/300',
+        originalName: file.name
+      }
+    };
+  }
+
+  try {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('altText', altText);
+    formData.append('caption', caption);
+
+    const response = await fetch(`${API_BASE_URL}/api/uploads.php`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
+      },
+      body: formData,
+    });
+
+    if (!response.ok) throw new Error('Upload failed');
+    return await response.json();
+  } catch (error) {
+    return {
+      success: false,
+      message: 'Upload failed. Please try again.'
+    };
+  }
+}
 // Types
 export interface Blog {
   id: number;
