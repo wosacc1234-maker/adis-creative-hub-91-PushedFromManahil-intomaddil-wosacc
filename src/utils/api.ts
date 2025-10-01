@@ -20,15 +20,23 @@ import servicesData from '@/data/services.json';
 import notificationsData from '@/data/notifications.json';
 import userDataFile from '@/data/userData.json';
 
+// Import Supabase API functions
+import * as SupabaseAPI from './supabase-api';
+
 // API configuration
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
-const USE_MOCK_DATA = import.meta.env.VITE_USE_MOCK_DATA !== 'false'; // Default to true
+const USE_MOCK_DATA = import.meta.env.VITE_USE_MOCK_DATA === 'true'; // Default to false (use Supabase)
+const USE_SUPABASE = import.meta.env.VITE_USE_SUPABASE !== 'false'; // Default to true
 
 /**
  * Fetch global site settings
  * @returns Promise<Record<string, any>>
  */
 export async function fetchGlobalSettings(): Promise<Record<string, any>> {
+  if (USE_SUPABASE) {
+    return SupabaseAPI.fetchGlobalSettings();
+  }
+
   if (USE_MOCK_DATA) {
     await simulateDelay();
     return {
@@ -348,13 +356,17 @@ const handleApiError = (error: any, fallbackData: any) => {
  * @returns Promise<PaginatedResponse<Blog>>
  */
 export async function fetchBlogs(page: number = 1, limit: number = 10): Promise<{ data: Blog[]; page: number; totalPages: number; totalItems: number; }> {
+  if (USE_SUPABASE) {
+    return SupabaseAPI.fetchBlogs(page, limit);
+  }
+
   if (USE_MOCK_DATA) {
     await simulateDelay();
     const allBlogs = blogsData as Blog[];
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
     const paginatedBlogs = allBlogs.slice(startIndex, endIndex);
-    
+
     return {
       data: paginatedBlogs,
       page,
@@ -384,9 +396,13 @@ export async function fetchBlogs(page: number = 1, limit: number = 10): Promise<
  * @returns Promise<Blog | null>
  */
 export async function fetchBlogById(identifier: string | number): Promise<Blog | null> {
+  if (USE_SUPABASE) {
+    return SupabaseAPI.fetchBlogBySlug(String(identifier));
+  }
+
   if (USE_MOCK_DATA) {
     await simulateDelay();
-    const blog = blogsData.find(b => 
+    const blog = blogsData.find(b =>
       b.id === Number(identifier) || b.slug === identifier
     );
     return blog as Blog || null;
@@ -406,6 +422,10 @@ export async function fetchBlogById(identifier: string | number): Promise<Blog |
  * @returns Promise<Testimonial[]>
  */
 export async function fetchTestimonials(): Promise<Testimonial[]> {
+  if (USE_SUPABASE) {
+    return SupabaseAPI.fetchTestimonials();
+  }
+
   if (USE_MOCK_DATA) {
     await simulateDelay();
     return testimonialsData as Testimonial[];
@@ -505,6 +525,10 @@ export async function fetchPortfolioById(identifier: string | number): Promise<P
  * @returns Promise<Service[]>
  */
 export async function fetchServices(): Promise<Service[]> {
+  if (USE_SUPABASE) {
+    return SupabaseAPI.fetchServices();
+  }
+
   if (USE_MOCK_DATA) {
     await simulateDelay();
     return servicesData as Service[];
@@ -629,11 +653,15 @@ export async function submitContactForm(formData: {
   timeline?: string;
   phone?: string;
 }): Promise<{ success: boolean; message: string }> {
+  if (USE_SUPABASE) {
+    return SupabaseAPI.submitContactForm(formData);
+  }
+
   if (USE_MOCK_DATA) {
     await simulateDelay(800);
     // Simulate 95% success rate
     const success = Math.random() > 0.05;
-    
+
     if (success) {
       return {
         success: true,
@@ -656,7 +684,7 @@ export async function submitContactForm(formData: {
       },
       body: JSON.stringify(formData),
     });
-    
+
     const data = await response.json();
     return {
       success: response.ok,
@@ -676,6 +704,10 @@ export async function submitContactForm(formData: {
  * @returns Promise<{ success: boolean; message: string }>
  */
 export async function subscribeNewsletter(email: string): Promise<{ success: boolean; message: string }> {
+  if (USE_SUPABASE) {
+    return SupabaseAPI.subscribeNewsletter(email);
+  }
+
   if (USE_MOCK_DATA) {
     await simulateDelay(500);
     console.log('Newsletter subscription:', email);
@@ -693,7 +725,7 @@ export async function subscribeNewsletter(email: string): Promise<{ success: boo
       },
       body: JSON.stringify({ email }),
     });
-    
+
     const data = await response.json();
     return {
       success: response.ok,
